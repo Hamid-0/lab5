@@ -4,6 +4,7 @@ https://getbootstrap.com/docs/5.0/getting-started/introduction/
 This will help you get started with your code!
 -->
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,193 +14,183 @@ This will help you get started with your code!
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <title>Module 4 Lab</title>
 </head>
+
 <body>
-<!--
+    <!--
 I store all of the page information in a container,
 Many websites will use what is called CSS grid layouts, where you will have a header, body, footer and both sides used for ads or other information
 -->
-<div class = "container-lg">
+    <div class="container-lg">
 
-    <!--
+        <!--
     Most websites now feature what is called a NavBar.
     The example I give is quite simple with a logo and some text, but you can use it for many navigational patterns
     https://getbootstrap.com/docs/5.0/components/navbar/
     -->
 
-    <nav class="navbar bg-dark text-white p-3 my-3 ">
-        <h1><img src="images/company_logo.png" width="130" height="130"> Welcome to my Physiotherapy Clinic</h1>
-    </nav>
+        <nav class="navbar bg-dark text-white p-3 my-3 ">
+            <h1><img src="images/company_logo.png" class="img-rounded" width="130" height="130"> Ottawa Physiotherapy
+            </h1>
+        </nav>
 
-    <div class=" p-3 my-3 border bg-light">
-        <h1 class=""> About us</h1>
-        <p class="p-4 my-3" style="font-size: 25px">We are a small clinic located in Smiths Falls Ontario</p>
-        <p style="font-size: 25px; padding-left: 1.5rem">We are dedicated to providing the <strong>best</strong> care to our customers</p>
-    </div>
-    <!--
+        <div class=" p-3 my-3 border bg-light">
+            <h1 class=""> About us</h1>
+            <p class="p-4 my-3" style="font-size: 25px">We are a small clinic located in South Keys Ottawa</p>
+            <p style="font-size: 25px; padding-left: 1.5rem">We are dedicated to providing the <strong>best</strong> care to our customers</p>
+        </div>
+        <!--
     Tables are one of many ways to organize information easily.
     It is a good way to list of prices, or services in a business website
     https://getbootstrap.com/docs/5.0/content/tables/
     -->
-    <table class="table table-info table-hover">
-        <thead>
-            <tr>
-                <th scope="col"><h2>Service</h2></th>
-                <th scope="col"><h2>Description</h2></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Placeholder 1</td>
-                <td>Placeholder 2</td>
-            </tr>
-            <tr>
-                <td>Placeholder 1</td>
-                <td>Placeholder 2</td>
-            </tr>
-            <tr>
-                <td>Placeholder 1</td>
-                <td>Placeholder 2</td>
-            </tr>
-        </tbody>
-    </table>
-    <h1>Here is an alert!</h1>
-    <!-- Alerts are an easy way to grab the users attention, this page goes into more detail
-    https://getbootstrap.com/docs/5.0/components/alerts/
-    -->
-    <p>This indicated something important in the page</p>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Yikes!</strong> Perhaps you left one of the fields empty for this to appear?
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-    <h1>Button States</h1>
-    <!--
-    Buttons can be used for submitting forms, triggering events among many other things.
-    https://getbootstrap.com/docs/5.0/components/buttons/
-    -->
-
-    <button type="button" class="btn btn-warning">Primary Button</button>
-    <button type="button" class="btn btn-warning active">Active Button</button>
-    <button type="button" class="btn btn-warning" disabled>Disabled Button</button>
-
-    <h1>Modal Example</h1>
-
-    <!-- Button trigger modal
-    We use the same button code from above, but now we can trigger a modal to appear.
-    The bootstrap tutorial includes many different types of modals that you can explore
-    https://getbootstrap.com/docs/5.0/components/modal/
-    -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    In the body we can add various components. In this example some radio buttons
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            No
-                        </label>
+        <h3>Our Services</h2>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Back Pain
+                        </button>
+                    </h3>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Have you been struggling with back pain? Get more detailed information on our approach to treating chronic back pain.</div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Knee Pain
+                        </button>
+                    </h3>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Our expert physiotherapists will tailor a rehabilitation plan specific to you and will work with you throughout your rehabilition process to ensure you come back from your injury stronger! Our rates start at $50 a session, schedule
+                            a free consultation with one of our physiotherapists to create a rehabilition plan to better estimate the total cost of your therapy.</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Neck and Shoulder Pain
+                        </button>
+                    </h3>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">We offer cryotherapy to give you the best recovery possible. Our cryotherapy sessions are $40 each, there is no need to schedule a consultation appointment prior to your first session and your first session is free!</div>
+                    </div>
+                </div>
 
-    <!-- Cards are quite useful when building a website. They are a useful way to organize information.
+
+
+                <!-- Cards are quite useful when building a website. They are a useful way to organize information.
     They can be organized using a CSS grid or other layout options.
     https://getbootstrap.com/docs/5.0/components/card/
     -->
 
-    <h1>Meet the Physicians!</h1>
-    <div class="row justify-content-around">
-        <div class="card" style="width: 18rem;">
-            <img src="images/doctor.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Here is some filler text, in here you can describe your doctor</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="images/doctor.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Here is some filler text, in here you can describe your doctor</p>
-            </div>
-        </div>
-    </div>
+                <h1>Meet our staff</h1>
+                <div class="row justify-content-around">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/doctor.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">This is our Chiropractor, Jim. He has been a registered Chiropractor for 7 years.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/doctor2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">This is our Registered Physiotherapist, Richard.
+                                <br> Richard graduated with his Bachelor of Science in Physiotherapy from Dalhousie University is 1986.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/doctor3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">This is Leila our Receptionist. She is an aspiring physiotherapist and is currently going to school at the University of Ottawa for an Honours Bachelor in Health Science.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <!--
+                <!-- Button trigger modal
+    We use the same button code from above, but now we can trigger a modal to appear.
+    The bootstrap tutorial includes many different types of modals that you can explore
+    https://getbootstrap.com/docs/5.0/components/modal/
+    -->
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Book Now!
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Book an Appointment</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Select the type of appointment you want to book.
+                                <div class="d-grid gap-2 btn-lg">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="General consultation">General consultation</option>
+                                        <option value="Back Pain">Back Pain</option>
+                                        <option value="Knee Pain">Knee Pain</option>
+                                        <option value="Neck and Shoulder Pain">Neck and Shoulder Pain</option>
+                                    </select>
+                                </div>
+                                <br>
+
+                                <label for="apptDate">Choose a date for your appointment</label><br>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input type="date" id="apptDate" name="apptDate">
+                                </div>
+
+                                <label for="apptTime">Choose a time for your appointment</label>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input type="time" id="apptTime" name="appt">
+                                </div>
+
+                                <label for="firstName">First Name</label>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input type="text" id="firstName" name="firstName">
+                                </div>
+                                <label for="lastName">Last Name</label>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input type="text" id="lastName" name="lastName">
+                                </div>
+                                <label for="birthday">Birthday</label>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input type="date" id="birthday" name="birthday">
+                                </div>
+                                <label for="email">Enter your email address</label>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input type="text" id="email" name="email">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick=>Book
+                                    Appointment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
     We can also use buttons to expand some hidden options
     https://getbootstrap.com/docs/5.0/components/collapse/
     -->
-    <h1>More Information</h1>
 
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Button To Expand Options
-    </button>
 
-    <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-            Here we have some hidden data to avoid cluttering the page with information
-        </div>
-    </div>
+                <div class="well">
+                    <div class="card card-body">
+                        Our location is at 2446 Bank St #204, Ottawa, ON K1V 1A4<br> Our email address is <a href="mailto:info@ottawaphysiotherapy.ca">info@ottawaphysiotherapy.ca</a> a and our phone number is (613)-255-4685<br>
+                    </div>
+                </div>
 
-    <!-- This example is using what is called an accordian, this is one of three examples
-    https://getbootstrap.com/docs/5.0/components/accordion/
-    -->
 
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Accordion Item #1
-                </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">I can put information in this area</div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Accordion Item #2
-                </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">I can put information in this area</div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Accordion Item #3
-                </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">I can place information in this area</div>
-            </div>
-        </div>
-    </div>
-
-</div>
-<!-- here we input our javascript helper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+            <!-- here we input our javascript helper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
+
 </html>
