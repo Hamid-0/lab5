@@ -11,11 +11,16 @@ This will help you get started with your code!
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link href="styles/jquery.timepicker.min.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="scripts/jquery.timepicker.min.js"></script>
     <script src="scripts/service.js"></script>
 
     <title>Module 4 Lab</title>
@@ -35,10 +40,13 @@ This will help you get started with your code!
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#services"><img src="images/peigne.png" alt="" style="width:30px;">Our Services</a>
+                    <a class="nav-link" href="#services">Our Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#staff"><img src="images/tiger.png" alt="" style="width:30px;">Our Staff</a>
+                    <a class="nav-link" href="#staff">Our Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#location">Address</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#book">Book Now!</a>
@@ -176,6 +184,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                     <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book">
                         Book Now!
                     </button>
+
                 </div>
 
                 <!-- Modal -->
@@ -187,9 +196,10 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Select the type of appointment you want to book.
+                                <label for="typeAppointment">Select the type of appointment you want to book.
+                                </label><br>
                                 <div class="d-grid gap-2 btn-lg">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" aria-label="Default select example" id="typeAppointment">
                                         <option value="General consultation">General consultation</option>
                                         <option value="Message Therapy">Message Therapy</option>
                                         <option value="Back Pain">Electrical Muscle Stimulation</option>
@@ -198,16 +208,27 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                                         <option value="Neck and Shoulder Pain">Neck and Shoulder Pain</option>
                                     </select>
                                 </div>
-                                <br>
-
-                                <label for="apptDate">Choose a date for your appointment</label><br>
+                                <label for="typeAppointment">Choose your preferred expert 
+                                </label><br>
                                 <div class="d-grid gap-2 btn-lg">
-                                    <input type="date" id="apptDate" name="apptDate">
+                                    <select class="form-select" aria-label="Default select example" id="typeAppointment">
+                                        <option value="Jim">Jim</option>
+                                        <option value="Richard">Richard</option>
+                                        <option value="Leila">Leila</option>
+
+                                    </select>
                                 </div>
 
-                                <label for="apptTime">Choose a time for your appointment</label>
+                                <label for="dateInput">Choose a date for your appointment</label><br>
                                 <div class="d-grid gap-2 btn-lg">
-                                    <input type="time" id="apptTime" name="appt">
+                                    <input type="text" id="dateInput">
+
+                                </div>
+
+                                <label for="timeSel">Choose a time for your appointment</label>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input class="timepicker" name="timeSel" id="timeSel">
+
                                 </div>
 
                                 <label for="firstName">First Name</label>
@@ -224,7 +245,17 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                                 </div>
                                 <label for="email">Enter your email address</label>
                                 <div class="d-grid gap-2 btn-lg">
-                                    <input type="text" id="email" name="email">
+                                    <input type="text" id="email" name="email" title="Enter a valid Email address">
+                                </div>
+
+                                <label for="debit">Enter Credit Card Number:</label>
+                                <div class="d-grid gap-2 btn-lg">
+                                    <input type="text" id="debit" title="We ask for your credit card number in case of no-show, a $20 fee will be charged.">
+
+                                </div>
+                                <div class="d-grid gap-2 btn-lg">
+
+                                    <p id="disclamer">*We ask for your credit card number in case of no-show, a $20 fee will be charged.</p>
                                 </div>
 
                             </div>
@@ -233,7 +264,9 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick=>Book
                                     Appointment</button>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
                 <!--
@@ -241,7 +274,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     https://getbootstrap.com/docs/5.0/components/collapse/
     -->
 
-
+                <h3 id="location"> <img src="images/icons8-location-48 .png" alt=""> Our Address</h3>
                 <div class="well">
                     <div class="card card-body">
                         Our location is at 2446 Bank St #204, Ottawa, ON K1V 1A4<br> Our email address is <a href="mailto:info@ottawaphysiotherapy.ca">info@ottawaphysiotherapy.ca</a> Our phone number is (613)-255-4685<br>
