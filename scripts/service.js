@@ -9,13 +9,14 @@ function validatePhone(txtPhone) {
     var a = document.getElementById(txtPhone).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
-    var filter = /^(\([-+]?[0-9]+)\)$/;
+    var filter = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if (filter.test(a)) {
         return true;
     } else {
         return false;
     }
 }
+
 
 
 // Using date restrictions on datepicker
@@ -44,7 +45,7 @@ $(document).ready(function() {
     $("#phone").on("change", function() {
         if (!validatePhone("phone")) {
             alert("Wrong format for phone");
-            $("#phone").val("(xxxx)");
+            $("#phone").val("");
             $("#phone").addClass("error");
         } else {
             $("#phone").removeClass("error");
@@ -86,13 +87,22 @@ $(document).ready(function() {
     $("#debit").on("mouseleave", function() {
         $("#debit").removeClass("showInput");
     });
+    $("#email").on("mouseenter", function() {
+        $("#email").addClass("showInput");
+    });
+
+    $("#email").on("mouseleave", function() {
+        $("#email").removeClass("showInput");
+    });
 
     // https://jqueryui.com/tooltip/
     // The class "highlight" used here is predefined in JQuery UI
     // the message of the tooltip is encoded in the input (in the HTML file)
     $("#debit").tooltip({
+        track: true,
         classes: {
             "ui-tooltip": "highlight"
+
         }
     });
 
