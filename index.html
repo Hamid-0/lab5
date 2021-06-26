@@ -6,16 +6,47 @@ This will help you get started with your code!
 <html lang="en">
 
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="scripts/service.js"></script>
+
     <title>Module 4 Lab</title>
 </head>
 
 <body>
+    <!-- Using the collapsible Navbar, so we see the hamburger menu icon -->
+    <!-- It really has become a standard. -->
+    <!-- As your page is a vertical page (Module 4 requirement), you mus use the navbar -->
+    <!-- to just jump to parts of the page. What I put as First/Second/Third here would -->
+    <!-- be sections in your page. -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Ottawa Physiotherapy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#services"><img src="images/peigne.png" alt="" style="width:30px;">Our Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#staff"><img src="images/tiger.png" alt="" style="width:30px;">Our Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#book">Book Now!</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
     <!--
 I store all of the page information in a container,
 Many websites will use what is called CSS grid layouts, where you will have a header, body, footer and both sides used for ads or other information
@@ -43,7 +74,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     It is a good way to list of prices, or services in a business website
     https://getbootstrap.com/docs/5.0/content/tables/
     -->
-        <h3>Our Services</h2>
+        <h3 id="services"><img src="images/icons8-services-50.png" alt=""> Our Services</h2>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h3 class="accordion-header" id="flush-headingOne">
@@ -106,16 +137,21 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     They can be organized using a CSS grid or other layout options.
     https://getbootstrap.com/docs/5.0/components/card/
     -->
-
-                <h1>Meet our staff</h1>
+                <br>
+                <h2 id="staff"><img src="images/icons8-staff-50.png" alt=""> Meet our staff
+                </h2>
+                <br>
                 <div class="row justify-content-around">
                     <div class="card" style="width: 18rem;">
+                        <h4 style="text-align: center;">Jim</h4>
                         <img src="images/doctor.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
+
                             <p class="card-text">This is our Chiropractor, Jim. He has been a registered Chiropractor for 7 years.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
+                        <h4 style="text-align: center;">Richard</h4>
                         <img src="images/doctor2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is our Registered Physiotherapist, Richard.
@@ -124,20 +160,20 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
+                        <h4 style="text-align: center;">Leila</h4>
                         <img src="images/doctor3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">This is Leila our Receptionist. She is an aspiring physiotherapist and is currently going to school at the University of Ottawa for an Honours Bachelor in Health Science.</p>
                         </div>
                     </div>
                 </div>
-
                 <!-- Button trigger modal
     We use the same button code from above, but now we can trigger a modal to appear.
     The bootstrap tutorial includes many different types of modals that you can explore
     https://getbootstrap.com/docs/5.0/components/modal/
     -->
                 <div class="d-grid gap-2">
-                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" id="book">
                         Book Now!
                     </button>
                 </div>
