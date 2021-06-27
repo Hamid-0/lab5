@@ -109,8 +109,20 @@ $(document).ready(function() {
         maxDate: '+4M',
         // used to disable some dates
         beforeShowDay: $.datepicker.noWeekends,
-        beforeShowDay: disableDates
+        beforeShowDay: disableDates,
+        showButtonPanel: true,
+
+
     });
+    $("#bdayInput").datepicker({
+        dateFormat: setDateFormat,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:+0",
+
+    });
+    $("#dateInput").datepicker("option", "showAnim", "fadeIn");
+    $("#bdayInput").datepicker("option", "showAnim", "fadeIn");
 
     $('#timeSel').timepicker({
         'disableTimeRanges': [
@@ -166,7 +178,7 @@ $(document).ready(function() {
             $('#exampleModal').modal('hide');
             $('#info').modal('show');
             var str = "Thank you " + firstname + " for booking with us! \n\n Your " + typeAppointment + " appointment with " + expert + " is for " + date + " at " + time + "\n";
-            var str2 = "A confirmation email will be sent to you: " + email;
+            var str2 = "A confirmation email will be sent to you at: " + email;
             $("#test").text(str);
             $("#test2").text(str2);
 

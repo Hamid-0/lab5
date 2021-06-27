@@ -16,3 +16,20 @@ p {
     font-size: small;
     color: grey;
 }
+
+.ui-datepicker-calendar tr,
+.ui-datepicker-calendar td,
+.ui-datepicker-calendar td a,
+.ui-datepicker-calendar th {
+    font-size: inherit;
+}
+
+div.ui-datepicker {
+    font-size: 18px;
+    width: inherit;
+    height: inherit;
+}
+
+.ui-datepicker-title span {
+    font-size: 18px;
+}
