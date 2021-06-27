@@ -17,7 +17,31 @@ function validatePhone(txtPhone) {
     }
 }
 
+function validateDebit(txtDebit) {
+    var a = document.getElementById(txtDebit).value;
+    // This filter asks for something like (12345), so parentheses with any number (at least 1)
+    // of digits
+    var filter = /^\(?([0-9]{4})\)?[- ]?([0-9]{4})[- ]?([0-9]{4})[- ]?([0-9]{4})$/;
+    if (filter.test(a)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
+
+// regex taken from https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
+function validateEmail(txtEmail) {
+    var a = document.getElementById(txtEmail).value;
+    // This filter asks for something like (12345), so parentheses with any number (at least 1)
+    // of digits
+    var filter = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+    if (filter.test(a)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // Using date restrictions on datepicker
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/
@@ -51,6 +75,25 @@ $(document).ready(function() {
             $("#phone").removeClass("error");
         }
     });
+    $("#debit").on("change", function() {
+        if (!validateDebit("debit")) {
+            alert("Wrong format for Credit card");
+            $("#debit").val("");
+            $("#debit").addClass("error");
+        } else {
+            $("#debit").removeClass("error");
+        }
+    });
+    $("#email").on("change", function() {
+        if (!validateEmail("email")) {
+            alert("Wrong format for Email");
+            $("#email").val("");
+            $("#email").addClass("error");
+        } else {
+            $("#email").removeClass("error");
+        }
+    });
+
 
     // To change the style of the calender, look in jqueryui.com, under Themes, in the ThemeRoller Gallery
     // You can try different themes (the names are under the calendars) / This is Excite Bike
@@ -87,11 +130,11 @@ $(document).ready(function() {
     $("#debit").on("mouseleave", function() {
         $("#debit").removeClass("showInput");
     });
-    $("#email").on("mouseenter", function() {
+    $("#phone").on("mouseenter", function() {
         $("#email").addClass("showInput");
     });
 
-    $("#email").on("mouseleave", function() {
+    $("#phone").on("mouseleave", function() {
         $("#email").removeClass("showInput");
     });
 
@@ -105,6 +148,13 @@ $(document).ready(function() {
 
         }
     });
+    $("#submit").click(function() {
+        var firstname = $("#firstName").val();
 
+        alert(str);
+        $("#test").text(str);
+
+
+    });
 
 });

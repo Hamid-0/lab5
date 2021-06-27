@@ -252,7 +252,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                                 </div>
                                 <label for="email">Enter your email address</label>
                                 <div class="d-grid gap-2 btn-lg">
-                                    <input type="text" id="email" name="email" title="Enter a valid Email address" placeholder="Enter your Email">
+                                    <input type="text" id="email" name="email" title="Enter a valid Email address" placeholder="example123@gmail.com">
                                 </div>
                                 <label for="phone">Enter your Phone Number</label>
                                 <div class="d-grid gap-2 btn-lg">
@@ -272,7 +272,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick=>Book
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#info" id="submit">Book
                                     Appointment</button>
                             </div>
 
@@ -280,6 +280,26 @@ Many websites will use what is called CSS grid layouts, where you will have a he
 
                     </div>
                 </div>
+                <div class="modal fade" id="info" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="infoModalLabel">Booked!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="well">
+                                    <p id="test">
+                                        blah
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
                 <!--
     We can also use buttons to expand some hidden options
     https://getbootstrap.com/docs/5.0/components/collapse/
