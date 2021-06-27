@@ -163,6 +163,8 @@ $(document).ready(function() {
         if (firstname == "" || email == "" || date == "" || time == "" || expert == "" || typeAppointment == "" || lastname == "" || debit == "" || birthday == "" || phone == "") {
             alert("One or more fields are empty!");
         } else {
+            $('#exampleModal').modal('hide');
+            $('#info').modal('show');
             var str = "Thank you " + firstname + " for Booking with us! \n\n your " + typeAppointment + " appointment with " + expert + " is for " + date + " at " + time + "\n";
             var str2 = "A confirmation email will be sent to you: " + email;
             $("#test").text(str);
