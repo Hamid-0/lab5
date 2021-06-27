@@ -165,7 +165,7 @@ $(document).ready(function() {
         } else {
             $('#exampleModal').modal('hide');
             $('#info').modal('show');
-            var str = "Thank you " + firstname + " for Booking with us! \n\n your " + typeAppointment + " appointment with " + expert + " is for " + date + " at " + time + "\n";
+            var str = "Thank you " + firstname + " for booking with us! \n\n Your " + typeAppointment + " appointment with " + expert + " is for " + date + " at " + time + "\n";
             var str2 = "A confirmation email will be sent to you: " + email;
             $("#test").text(str);
             $("#test2").text(str2);
