@@ -150,9 +150,27 @@ $(document).ready(function() {
     });
     $("#submit").click(function() {
         var firstname = $("#firstName").val();
+        var email = $("#email").val();
+        var date = $("#dateInput").val();
+        var time = $("#timeSel").val();
+        var expert = $("#expert").val();
+        var typeAppointment = $("#typeAppointment").val();
+        var lastname = $("#lastname").val();
+        var debit = $("#debit").val();
+        var birthday = $("#birthday").val();
+        var phone = $("#phone").val();
 
-        alert(str);
-        $("#test").text(str);
+        if (firstname == "" || email == "" || date == "" || time == "" || expert == "" || typeAppointment == "" || lastname == "" || debit == "" || birthday == "" || phone == "") {
+            alert("One or more fields are empty!");
+        } else {
+            var str = "Thank you " + firstname + " for Booking with us! \n\n your " + typeAppointment + " appointment with " + expert + " is for " + date + " at " + time + "\n";
+            var str2 = "A confirmation email will be sent to you: " + email;
+            $("#test").text(str);
+            $("#test2").text(str2);
+
+        }
+
+
 
 
     });

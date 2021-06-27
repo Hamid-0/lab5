@@ -213,11 +213,11 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                                         <option value="Neck and Shoulder Pain">Neck and Shoulder Pain</option>
                                     </select>
                                 </div>
-                                <label for="typeAppointment" title="Click here to choose an expert ">Choose your
+                                <label for="expert" title="Click here to choose an expert ">Choose your
                                     preferred expert
                                 </label><br>
                                 <div class="d-grid gap-2 btn-lg">
-                                    <select class="form-select" aria-label="Default select example" id="typeAppointment">
+                                    <select class="form-select" aria-label="Default select example" id="expert">
                                         <option value="Jim">Jim</option>
                                         <option value="Richard">Richard</option>
                                         <option value="Leila">Leila</option>
@@ -284,19 +284,25 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="infoModalLabel">Booked!</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="well">
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">Booked!</h4>
                                     <p id="test">
-                                        blah
-                                    </p>
+                                        <p>
+                                            <p id="test2">
+                                                <p>
+
                                 </div>
                             </div>
-
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
+
                     </div>
+
                 </div>
 
 
